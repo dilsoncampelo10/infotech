@@ -1,5 +1,8 @@
 package com.infotech.info.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.hibernate.validator.constraints.UniqueElements;
 
 import jakarta.persistence.Column;
@@ -9,7 +12,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Client {
@@ -30,4 +33,8 @@ public class Client {
     @ManyToOne
     @JoinColumn(name = "address_id", updatable = false, nullable = false)
     private Address address;
+
+    @OneToMany(mappedBy = "client")
+    private List<Phone> phone = new ArrayList<Phone>();
+
 }
