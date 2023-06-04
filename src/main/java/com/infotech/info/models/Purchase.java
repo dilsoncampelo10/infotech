@@ -21,4 +21,8 @@ public class Purchase {
     @JoinColumn(name = "client_id", nullable = false, updatable = false)
     private Client client;
 
+    @ManyToOne
+    @JoinColumn(name = "employee_id", nullable = false, updatable = false)
+    private Employee employee;
+
 }
