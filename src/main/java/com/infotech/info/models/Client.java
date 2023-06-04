@@ -37,4 +37,6 @@ public class Client {
     @OneToMany(mappedBy = "client")
     private List<Phone> phone = new ArrayList<Phone>();
 
+    @OneToMany(mappedBy = "client")
+    private List<Purchase> purchase = new ArrayList<Purchase>();
 }

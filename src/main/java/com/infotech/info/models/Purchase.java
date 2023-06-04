@@ -7,17 +7,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 
 @Entity
-public class Phone {
-
+public class Purchase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String number;
+    private String paymentMethod;
 
     @ManyToOne
     @JoinColumn(name = "client_id", nullable = false, updatable = false)
